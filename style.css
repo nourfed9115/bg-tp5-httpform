@@ -1,0 +1,286 @@
+/* ---------- Général ---------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px 15px;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: #2d3748;
+}
+
+/* ---------- Conteneur ---------- */
+#conteneur {
+    max-width: 680px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- En-tête ---------- */
+#entete {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #e94560, #c62a47);
+    color: #ffffff;
+    text-align: center;
+    padding: 35px 20px 30px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Décoration "clap" en filigrane à droite */
+#entete::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: 5px;
+    width: 150px;
+    height: 130px;
+    background:
+        repeating-linear-gradient(
+            -20deg,
+            rgba(0, 0, 0, 0.12) 0px,
+            rgba(0, 0, 0, 0.12) 22px,
+            rgba(255, 255, 255, 0.10) 22px,
+            rgba(255, 255, 255, 0.10) 44px
+        );
+    transform: rotate(-15deg);
+    border-radius: 8px;
+    opacity: 0.7;
+}
+
+#entete h1 {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 10px 0;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+#entete p {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-size: 15px;
+}
+
+#contenu {
+    padding: 30px 30px 40px 30px;
+}
+
+/* ---------- Message d'info ---------- */
+#info {
+    background: #fff3cd;
+    color: #856404;
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-size: 12px;
+    margin-bottom: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ---------- Sections ---------- */
+.section {
+    background: linear-gradient(180deg, #ffffff, #f8f9fa);
+    border-left: 4px solid #e94560;
+    border-radius: 12px;
+    padding: 22px 22px 10px 22px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Titres de sections : plus foncés et plus gras */
+.section h2 {
+    margin: 0 0 18px 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0d0d1a;
+}
+
+/* ---------- Champs ---------- */
+.ligne {
+    display: flex;
+    gap: 15px;
+}
+
+.ligne .champ {
+    flex: 1;
+}
+
+.champ {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="number"],
+input[type="search"],
+input[type="url"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d5d9e0;
+    border-radius: 8px;
+    background: #ffffff;
+    font-size: 12px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #e94560;
+    box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.15);
+}
+
+select[multiple] {
+    height: 95px;
+}
+
+textarea {
+    letter-spacing: normal;
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    font-size: 10px;
+}
+
+/* ---------- Fieldset (radio / checkbox) ---------- */
+fieldset {
+    border: 1px solid #d5d9e0;
+    border-radius: 12px;
+    padding: 10px 15px 15px 15px;
+    margin: 0 0 18px 0;
+    background: #ffffff;
+}
+
+legend {
+    color: #e94560;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 0 10px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(180deg, #ffffff, #f8f9fa);
+    border-radius: 6px;
+    padding: 10px;
+    margin-top: 8px;
+}
+
+.option input {
+    accent-color: #e94560;
+    margin: 0;
+    width: 15px;
+    height: 15px;
+}
+
+.option label {
+    margin: 0;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* ---------- Range ---------- */
+#blocFrequence {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#frequence {
+    flex: 1;
+    accent-color: #e94560;
+}
+
+#valeurFrequence {
+    background: #e94560;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 15px;
+    padding: 7px 20px;
+}
+
+#uniteFrequence {
+    font-size: 13px;
+}
+
+/* ---------- Color ---------- */
+#couleur {
+    width: 75px;
+    height: 45px;
+    padding: 4px;
+    border: 1px solid #d5d9e0;
+    border-radius: 8px;
+    background: #f3f4f6;
+    cursor: pointer;
+}
+
+/* ---------- Upload (zone drag & drop) ---------- */
+input[type="file"] {
+    display: inline-block;
+    padding: 10px;
+    border: 2px dashed #d5d9e0;
+    border-radius: 8px;
+    background: #ffffff;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+input[type="file"]:hover {
+    border-color: #e94560;
+}
+
+#texteParrainage {
+    font-size: 11px;
+    color: #4a5568;
+    margin: 25px 0 15px 0;
+}
+
+/* ---------- Bouton ---------- */
+#blocBouton {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#boutonSubmit {
+    background: linear-gradient(135deg, #e94560, #c62a47);
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    padding: 16px 40px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(233, 69, 96, 0.4);
+}
+
+#boutonSubmit:hover {
+    transform: translateY(-2px);
+}
